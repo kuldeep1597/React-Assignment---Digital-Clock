@@ -15,7 +15,7 @@ class App extends Component {
         const[hours,minutes,seconds]=[this.state.time.getHours(),this.state.time.getMinutes(),this.state.time.getSeconds()];
         const amorpm = hours>=12 ? "PM" :"AM";
         const twelvehour = hours >12 ? hours-12 :hours;
-        const hourstring = this.paddednum(twelvehour);
+        const hourstring = ""+twelvehour;
         const minutestring = this.paddednum(minutes);
         const secondstring = this.paddednum(seconds);
         const fstring = `${hourstring}:${minutestring}:${secondstring} ${amorpm}`
