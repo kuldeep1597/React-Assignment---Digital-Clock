@@ -11,8 +11,8 @@ class App extends Component {
         this.intervalId = null;
     }
 
-    getString(){
-        const[hours,minutes,seconds]=[time.getHours(),time.getMinutes(),time.getSeconds()];
+    gettimeString(){
+        const[hours,minutes,seconds]=[this.state.time.getHours(),this.state.time.getMinutes(),this.state.time.getSeconds()];
         const amorpm = hours>=12 ? "PM" :"AM";
         const twelvehour = hours >12 ? hours-12 :hours;
         const hourstring = this.paddednum(twelvehour);
@@ -34,15 +34,15 @@ class App extends Component {
         clearInterval(this.intervalId);
     }
     paddednum(num){
-        const padded =( num<10?("0"+num) : (""+num));
-        return padded;
+      return ( num<10 ? ("0"+num) : (""+num));
+      
 
     }
     render() {
 
         return(
             <div className="Clock">
-                <h3 id="time">{this.getString()}</h3>
+                <h3 id="time">{this.gettimeString()}</h3>
                
             </div>
         )
